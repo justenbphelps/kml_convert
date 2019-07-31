@@ -1,5 +1,11 @@
 const toGeoJSON = require('../static/togeojson')
 
+import { FormRadio } from 'shards-react';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
+
+
 function upload(e) {
   const file = e.target.files[0]
   let url = window.URL.createObjectURL(file)
@@ -25,18 +31,22 @@ function convert(kml, file){
 }
 
 export default function Uploader() {
+
   return(
     <div className="wrapper">
       <h1>.kml converter</h1>
+      <span>Select your file below to convert and automatically download the .json file</span>
       <div className="upload_form">
         <a id="downloadAnchorElem" ></a>
         <input type="file" id="file_input" name="file_input" onChange={upload} accept=".kml"></input>
-        <label htmlFor="file_input">Select File</label>
+        <label htmlFor="file_input" className="upload_label">Select File</label>
       </div>
       <style jsx>{`
         .wrapper {
           width: 350px;
           height: 200px;
+          padding: 10px;
+          text-align: center;
           background-color: #fff;
           border-radius: 4px;
           box-shadow: 2px 6px 10px rgba(0,0,0,0.1);
@@ -47,10 +57,13 @@ export default function Uploader() {
         }
         h1 {
           font-weight: 400;
-          font-size: 24px;
+          font-size: 18px;
           margin-top: 10px;
         }
-        input {
+        span {
+          font-size: 12px;
+        }
+        input[type="file"] {
           width: 0.1px;
           height: 0.1px;
           opacity: 0;
@@ -58,7 +71,7 @@ export default function Uploader() {
           position: absolute;
           z-index: -1;
         }
-        label {
+        .upload_label {
           font-weight: 700;
           width: 150px;
           height: 35px;
@@ -68,7 +81,7 @@ export default function Uploader() {
           line-height: 150%;
           font-size: 1.15em;
           color: white;
-          background-color:#47a66a;
+          background-color: #4264fb;
           display: grid;
           align-items: center;
           cursor: pointer;

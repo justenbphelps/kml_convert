@@ -1,11 +1,9 @@
-import Uploader from './Uploader'
+import Uploader from './Uploader';
 
 export default function Wrapper() {
   return (
     <div>
-
       <Uploader />
-      <img src="/static/logo.svg" width="70px"/>
       <style jsx>{`
         div {
           height: 100vh;

@@ -15,7 +15,6 @@ export default function Index() {
           padding: 0;
           background-color: #fff;
           color: #333;
-          font-family: 'Avenir';
         }
       `}</style>
     </div>
