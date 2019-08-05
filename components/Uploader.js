@@ -59,7 +59,7 @@ export default function Uploader() {
           </FormRadio>
         </div>
 
-      <span>Select your .kml file below to convert and automatically download the converted .json file</span>
+      <span>Select your .kml file below to convert and automatically download the converted file</span>
       <div className="upload_form">
         <a id="downloadAnchorElem" ></a>
         <input type="file" id="file_input" name="file_input" onChange={upload} accept=".kml"></input>
@@ -116,7 +116,7 @@ export default function Uploader() {
           line-height: 150%;
           font-size: 1.15em;
           color: white;
-          background-color: #4264fb;
+          background-color: #037aff;
           display: grid;
           align-items: center;
           cursor: pointer;
