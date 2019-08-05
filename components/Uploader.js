@@ -26,7 +26,7 @@ function convert(kml, file){
   var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojson));
   var dlAnchorElem = document.getElementById('downloadAnchorElem');
   dlAnchorElem.setAttribute("href",     dataStr     );
-  dlAnchorElem.setAttribute("download", file.name + ".json");
+  dlAnchorElem.setAttribute("download", file.name.slice(0, -4) + ".json");
   dlAnchorElem.click();
 }
 
@@ -35,7 +35,7 @@ export default function Uploader() {
   return(
     <div className="wrapper">
       <h1>.kml converter</h1>
-      <span>Select your file below to convert and automatically download the .json file</span>
+      <span>Select your .kml file below to convert and automatically download the .json file</span>
       <div className="upload_form">
         <a id="downloadAnchorElem" ></a>
         <input type="file" id="file_input" name="file_input" onChange={upload} accept=".kml"></input>
