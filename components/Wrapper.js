@@ -1,17 +1,21 @@
 import Uploader from './Uploader';
+import Footer from './Footer'
 
 export default function Wrapper() {
   return (
-    <div>
+    <div id="wrapper">
+      <div></div>
       <Uploader />
+      <Footer />
       <style jsx>{`
-        div {
+        #wrapper {
           height: 100vh;
           width: 100%;
-          background-color: #fafafd;
+          background-image: url('/static/map.png');
+          background-size: cover;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
         }
         img {
